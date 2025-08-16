@@ -11,6 +11,14 @@ requires
 ```bash
 cd build
 
+# when host is window/linux x86_64
+dagger --verbose call my-build-game-step \
+       --platform_build_container=x86_64 \
+       --platform=macos --game_dir=game1 --src=. \
+       export --path=./my-export22.zip
+
+
+# when host is mac m1
 dagger --verbose call my-build-game-step \
        --platform_build_container=arm64 \
        --platform=macos --game_dir=game1 --src=. \
