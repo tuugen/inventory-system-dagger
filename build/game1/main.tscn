@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://54k3b652moad"]
+
+[ext_resource type="Script" uid="uid://c0pv5t04oc1uk" path="res://my_grid_filler.gd" id="1_0xm2m"]
+[ext_resource type="InventoryDatabase" uid="uid://cisw6utobgg8v" path="res://inv_database1.tres" id="2_0xm2m"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="Control" type="Control" parent="Camera3D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Camera3D/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera3D/Control/Panel"]
+layout_mode = 0
+offset_right = 615.0
+offset_bottom = 645.0
+
+[node name="Label" type="Label" parent="Camera3D/Control/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 44
+text = "GAME1"
+
+[node name="GridContainer" type="GridContainer" parent="Camera3D/Control/Panel/HBoxContainer" node_paths=PackedStringArray("inventory")]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 6
+script = ExtResource("1_0xm2m")
+inventory = NodePath("../../../../../GridInventory2")
+
+[node name="FmodListener3D" type="FmodListener3D" parent="Camera3D/Control"]
+
+[node name="GridInventory2" type="GridInventory" parent="."]
+database = ExtResource("2_0xm2m")
