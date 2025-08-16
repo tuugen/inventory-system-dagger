@@ -154,8 +154,8 @@ class Basics:
             {
                 "type": "git_repo",
                 "repo_url": "https://github.com/expressobits/inventory-system",
-                # "branch": "addon-2.9.1",
-                "branch": "addon-2.6.3",
+                "branch": "addon-2.9.1",
+                # "branch": "addon-2.6.3",
                 "source_path": "./addons/inventory-system"
             }
         ]
